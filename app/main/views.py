@@ -4,13 +4,11 @@ from flask_wtf import FlaskForm
 from . import main
 
 @main.route('/')
-@main.route('/index')
-@main.route('/index/<uname>')
-def index(uname):
+def index():
 
     '''
     View root page function that returns the index page and its data
     '''
-    user = Userr.query.filter_by(username = name).first()
 
-    return render_template('index.html',user = user)
+
+    return render_template('index.html')
