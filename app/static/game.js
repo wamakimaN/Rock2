@@ -3,8 +3,8 @@ $(document).ready(function () {
   $("#form").submit(function (event) {
     event.preventDefault()
 
-    var playerScore = 0;
-    var compScore = 0;
+    let playerScore = 0;
+    let compScore = 0;
 
     let playerOption = $("#playerOption option:selected").text();
     console.log(playerOption)
@@ -26,18 +26,22 @@ $(document).ready(function () {
 
     let playerResult = results[randomNum][playerChoiceIndex];
 
+
     
 
     if (playerResult === 'u') {
       alert("You win");
-      playerScore+=1
+      playerScore ++;
       $("#player").text(playerScore);
+
     } else if (playerResult === 't') {
       alert("it's a tie");
+
     } else {
       alert("Computer wins");
-      compScore+=1
+      compScore ++;
       $("#comp").text(compScore);
+
     }
     return false;
   });
