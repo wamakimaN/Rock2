@@ -12,6 +12,15 @@ class RegistrationForm(FlaskForm):
     submit = SubmitField('Sign Up')
 
 
+# form for login
+class LoginForm(FlaskForm):
+    username = StringField('Username',
+                        validators=[DataRequired(), Email()])
+    password = PasswordField('Password', validators=[DataRequired()])
+    remember = BooleanField('Remember Me')
+    submit = SubmitField('Login')
+
+
 def validate_username(self,data_field):
     if User.query.filter_by(username = data_field.data).first():
        raise ValidationError('That username is taken')
