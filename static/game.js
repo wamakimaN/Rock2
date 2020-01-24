@@ -1,7 +1,7 @@
 const game = ()=>{
-    let pScore = 0;
-    let cScore = 0;
+    let playerScore = 0;
+    let compScore = 0;
 
-    
+
 
 }
