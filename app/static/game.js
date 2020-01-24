@@ -1,6 +1,6 @@
 $(document).ready(function () {
 
-  $("form#").submit(function (event) {
+  $("form#form").submit(function (event) {
     event.preventDefault()
 
     let playerOption = $("#playerOption option:selected").text();
