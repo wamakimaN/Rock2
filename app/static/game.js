@@ -1,9 +1,13 @@
 $(document).ready(function () {
 
-  $("form#form").submit(function (event) {
+  $("#form").submit(function (event) {
     event.preventDefault()
 
+    var playerScore = 0;
+    var compScore = 0;
+
     let playerOption = $("#playerOption option:selected").text();
+    console.log(playerOption)
 
     let choiceStack = ['paper', 'rock', 'scissors'];
     let playerChoiceIndex = choiceStack.indexOf(playerOption);
@@ -22,13 +26,19 @@ $(document).ready(function () {
 
     let playerResult = results[randomNum][playerChoiceIndex];
 
-    console.log(playerResult)
+    
 
-
-
-
-
-
-  })
-
+    if (playerResult === 'u') {
+      alert("You win");
+      playerScore+=1
+      $("#player").text(playerScore);
+    } else if (playerResult === 't') {
+      alert("it's a tie");
+    } else {
+      alert("Computer wins");
+      compScore+=1
+      $("#comp").text(compScore);
+    }
+    return false;
+  });
 });
